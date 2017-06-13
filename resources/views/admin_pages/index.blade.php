@@ -30,6 +30,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
+            <h3 class="text-center text-success">Ekaruz Invoice Management</h3>
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Admin Sign In</h3>

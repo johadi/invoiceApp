@@ -25,29 +25,29 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Invoice Number</th>
-                                            <th>Invoice Client</th>
-                                            <th>Payment method</th>
-                                            <th>Date Created</th>
-                                            <th>Due Date</th>
-                                            <th>View</th>
-                                            <th>Edit</th>
-                                            <th>Remove</th>
+                                            <th class="text-center">Invoice Number</th>
+                                            <th class="text-center">Invoice Client</th>
+                                            <th class="text-center">Payment method</th>
+                                            <th class="text-center">Date Created</th>
+                                            <th class="text-center">Due Date</th>
+                                            <th class="text-center">View</th>
+                                            <th class="text-center">Edit</th>
+                                            <th class="text-center">Remove</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @if(count($invoices))
                                             @foreach($invoices as $invoice)
-                                                <tr>
+                                                <tr class="text-center">
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$invoice->invoice_number}}</td>
                                                     <td>{{$invoice->client->first_name.' '.$invoice->client->last_name}}</td>
                                                     <td>{{$invoice->payment_method}}</td>
                                                     <td>{{$invoice->created_at->toFormattedDateString()}}</td>
                                                     <td>{{$invoice->due_date->toFormattedDateString()}}</td>
-                                                    <td><a href="/invoice/view/{{$invoice->id}}">view</a></td>
-                                                    <td><a href="/invoice/edit/{{$invoice->id}}">Edit</a></td>
-                                                    <td><a href="/invoice/delete/{{$invoice->id}}" onclick="return showConfirm()">Remove</a></td>
+                                                    <td><a class="btn btn-success btn-sm" href="/invoice/view/{{$invoice->id}}"><i class="fa fa-check"></i> view</a></td>
+                                                    <td><a class="btn btn-primary btn-sm" href="/invoice/edit/{{$invoice->id}}"><i class="fa fa-link"></i> Edit</a></td>
+                                                    <td><a class="btn btn-danger btn-sm" href="/invoice/delete/{{$invoice->id}}" onclick="return showConfirm()"><i class="fa fa-times"></i> Remove</a></td>
                                                 </tr>
                                             @endforeach
                                         @endif

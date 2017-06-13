@@ -21,6 +21,7 @@
                             <div class="col-lg-12">
 
                                 <div class="table-responsive">
+                                    @include('partials.success')
                                     <table class="table table-striped table-bordered table-hover" id="item-table">
                                         <thead>
                                         <tr>
@@ -31,7 +32,7 @@
                                             <th>Phone</th>
                                             <th>Company Name</th>
                                             <th>Company Address</th>
-                                            <th>invoices</th>
+                                            <th>Client invoices</th>
                                             <th>View/Edit</th>
                                             <th>Remove</th>
                                         </tr>
@@ -47,9 +48,9 @@
                                                     <td>{{$client->phone1}}</td>
                                                     <td>{{$client->company_name}}</td>
                                                     <td>{{$client->company_address}}</td>
-                                                    <td><a>{{$client->invoices->count()}} completed</a></td>
-                                                    <td><a>View/Edit</a></td>
-                                                    <td><a>Remove</a></td>
+                                                    <td>{{$client->invoices->count()}}</td>
+                                                    <td><a class="btn btn-success btn-sm" href="/client/view/{{$client->id}}"><i class="fa fa-check"></i> View/Edit</a></td>
+                                                    <td><a class="btn btn-danger btn-sm" onclick="return showClientConfirm()" href="/client/delete/{{$client->id}}"><i class="fa fa-times"></i> Remove</a></td>
                                                 </tr>
                                             @endforeach
                                         @endif

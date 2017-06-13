@@ -112,7 +112,7 @@
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">{{$clients_with_invoice_count}}</div>
-                                <div>Clients with completed invoices</div>
+                                <div>Clients with invoices</div>
                             </div>
                         </div>
                     </div>
@@ -164,19 +164,19 @@
                                     <th>#</th>
                                     <th>Invoice Number</th>
                                     <th>Date Created</th>
-                                    <th>Remove</th>
                                     <th>Complete</th>
+                                    <th>Remove</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @if(count($invoice_not_completed))
                                     @foreach($invoice_not_completed as $invoice)
-                                        <tr class="text-danger">
+                                        <tr class="text-danger text-center">
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$invoice->invoice_number}}</td>
                                             <td>{{$invoice->created_at->toFormattedDateString()}}</td>
-                                            <td><a href="/invoice/generate/{{$invoice->id}}">Complete Invoice</a></td>
-                                            <td><a href="/invoice/delete/{{$invoice->id}}" onclick="return showConfirm()">Remove</a></td>
+                                            <td><a class="btn btn-primary btn-sm" href="/invoice/generate/{{$invoice->id}}"><i class="fa fa-link"></i> Complete Invoice</a></td>
+                                            <td><a class="btn btn-danger btn-sm" href="/invoice/delete/{{$invoice->id}}" onclick="return showConfirm()"><i class="fa fa-times"></i> Remove</a></td>
                                         </tr>
                                     @endforeach
                                 @endif
@@ -213,7 +213,7 @@
                                 <i class="fa fa-check-circle fa-fw"></i> {{$ekaruz->town_address}}
                             </a>
                             <a class="list-group-item">
-                                <i class="fa ffa-check-circle fa-fw"></i> {{$ekaruz->state_address}}
+                                <i class="fa fa-check-circle fa-fw"></i> {{$ekaruz->state_address}}
                             </a>
                         </div>
                         <!-- /.list-group -->

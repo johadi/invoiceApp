@@ -44,5 +44,8 @@ $(document).ready(function(){
 
 });
 function showConfirm(){
-    return confirm('Are you sure you want to delete this invoice?')
+    return confirm('Are you sure you want to delete this Invoice?')
+}
+function showClientConfirm(){
+    return confirm('Are you sure you want to delete this Client?')
 }

@@ -49,8 +49,8 @@
                                                         <td>Not available</td>
                                                         <td>{{$invoice->created_at->toFormattedDateString()}}</td>
                                                         <td>Not available</td>
-                                                        <td colspan="2"><a href="/invoice/generate/{{$invoice->id}}">complete Invoice</a></td>
-                                                        <td><a href="/invoice/delete/{{$invoice->id}}" onclick="return showConfirm()">Remove</a></td>
+                                                        <td colspan="2"><a class="btn btn-primary btn-sm" href="/invoice/generate/{{$invoice->id}}"><i class="fa fa-link"></i> complete Invoice</a></td>
+                                                        <td><a class="btn btn-danger btn-sm" href="/invoice/delete/{{$invoice->id}}" onclick="return showConfirm()"><i class="fa fa-times"></i> Remove</a></td>
                                                     </tr>
                                                 @else
                                                     <tr>
@@ -61,9 +61,9 @@
                                                         <td>{{$invoice->payment_method}}</td>
                                                         <td>{{$invoice->created_at->toFormattedDateString()}}</td>
                                                         <td>{{$invoice->due_date->toFormattedDateString()}}</td>
-                                                        <td><a href="/invoice/view/{{$invoice->id}}">view</a></td>
-                                                        <td><a href="/invoice/edit/{{$invoice->id}}">Edit</a></td>
-                                                        <td><a href="/invoice/delete/{{$invoice->id}}" onclick="return showConfirm()">Remove</a></td>
+                                                        <td><a class="btn btn-success btn-sm" href="/invoice/view/{{$invoice->id}}"><i class="fa fa-check"></i> view</a></td>
+                                                        <td><a class="btn btn-primary btn-sm" href="/invoice/edit/{{$invoice->id}}"><i class="fa fa-link"></i> Edit</a></td>
+                                                        <td><a class="btn btn-danger btn-sm" href="/invoice/delete/{{$invoice->id}}" onclick="return showConfirm()"><i class="fa fa-times"></i> Remove</a></td>
                                                     </tr>
                                                 @endif
                                             @endforeach

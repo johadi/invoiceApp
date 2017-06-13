@@ -11,6 +11,9 @@ class Client extends Model
     public static function addClient($request){
         static::create($request);
     }
+    public function scopeUpdateClient($query,$request,$client_id){
+        $query->where('id',$client_id)->update($request);
+    }
     public function invoices(){
         return $this->hasMany(Invoice::class);
     }

@@ -21,6 +21,7 @@
                             <div class="col-lg-12">
 
                                 <div class="table-responsive">
+                                    @include('partials.success')
                                     <table class="table table-striped table-bordered table-hover" id="item-table">
                                         <thead>
                                         <tr>
@@ -50,8 +51,8 @@
                                                     <td>{{$client->company_name}}</td>
                                                     <td>{{$client->company_address}}</td>
                                                     <td>No invoices yet</td>
-                                                    <td><a>View/Edit</a></td>
-                                                    <td><a>Remove</a></td>
+                                                    <td><a class="btn btn-primary btn-sm" href="/client/view/{{$client->id}}"><i class="fa fa-link"></i> View/Edit</a></td>
+                                                    <td><a class="btn btn-danger btn-sm" onclick="return showClientConfirm()" href="/client/delete/{{$client->id}}"><i class="fa fa-times"></i> Remove</a></td>
                                                 </tr>
                                             @endforeach
                                         @endif

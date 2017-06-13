@@ -34,5 +34,10 @@ Route::get('/invoice/delete/{invoice}', 'InvoiceController@destroy');//handle in
 //client routes
 Route::get('/client/create', 'ClientController@create');
 Route::post('/client/create','ClientController@store');
-Route::get('/client/show', 'ClientController@show');//show client info
 Route::get('/client/show/{status}', 'ClientController@index');//handles various client display options
+Route::get('/client/view/{client}', 'ClientController@viewProcess');//process client info and redirect to client/view
+Route::get('/client/view', 'ClientController@viewClient');//view client info and edit
+Route::post('/client/view', 'ClientController@viewClientPost');//post route for client info and edit
+Route::get('/client/delete/{client}', 'ClientController@destroy');//delete a client
+
+Route::get('/download','AdminController@download');

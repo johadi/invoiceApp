@@ -26,21 +26,21 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Invoice Number</th>
-                                            <th>Date Created</th>
-                                            <th>Complete</th>
-                                            <th>Remove</th>
+                                            <th class="text-center">Invoice Number</th>
+                                            <th class="text-center">Date Created</th>
+                                            <th class="text-center">Complete</th>
+                                            <th class="text-center">Remove</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody class="text-center">
                                         @if(count($invoices))
                                             @foreach($invoices as $invoice)
                                                 <tr class="text-danger">
                                                     <td>{{$loop->iteration}}</td>
                                                     <td>{{$invoice->invoice_number}}</td>
                                                     <td>{{$invoice->created_at->toFormattedDateString()}}</td>
-                                                    <td><a href="/invoice/generate/{{$invoice->id}}">Complete Invoice</a></td>
-                                                    <td><a href="/invoice/delete/{{$invoice->id}}" onclick="return showConfirm()">Remove</a></td>
+                                                    <td><a class="btn btn-primary btn-sm" href="/invoice/generate/{{$invoice->id}}"><i class="fa fa-link"></i> Complete Invoice</a></td>
+                                                    <td><a class="btn btn-danger btn-sm" href="/invoice/delete/{{$invoice->id}}" onclick="return showConfirm()"><i class="fa fa-times"></i> Remove</a></td>
                                                 </tr>
                                             @endforeach
                                         @endif

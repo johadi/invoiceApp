@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Ekaruz;
 use App\Invoice;
 use App\Client;
+use PDF;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,6 +14,12 @@ class AdminController extends Controller
         $this->middleware('auth')->except(['index','store']);
     }
 
+    //download test
+    public function download(){
+        //return view('invoice_pages.test');
+        $pdf = PDF::loadView('invoice_pages.test', ['name'=>'hello']);
+        return $pdf->download('invoice.pdf');
+    }
     //route for admin login
     public function index() {
         return view('admin_pages.index');
